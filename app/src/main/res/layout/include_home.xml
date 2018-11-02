@@ -1,55 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <Button
-        android:id="@+id/btnScan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/scan_qr_or_barcode" />
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="?attr/actionBarSize">
 
     <LinearLayout
-        android:id="@+id/llResponse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlButtons"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2" />
+
+                <Button
+                    android:id="@+id/btnScan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_16"
+                    android:enabled="false"
+                    android:text="@string/scan_qr_or_barcode" />
+            </LinearLayout>
+
+            <app.com.Ui.CustomVIew.TextViewLight
+                android:id="@+id/tvQr_BarcodeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:textColor="@color/color_dark_gray"
+                android:textSize="@dimen/normal_text_size"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:background="@color/color_gray"></View>
+
+            <app.com.Ui.CustomVIew.TextViewLight
+                style="@style/normalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/space_16"
+                android:paddingRight="@dimen/space_16"
+                android:text="OR"
+                android:textColor="@color/color_dark_gray" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <app.com.Ui.CustomVIew.TextViewLight
+                style="@style/normalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/space_16"
+                android:text=""
+                android:textColor="@color/color_dark_gray"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbEnter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2" />
+
+                <app.com.Ui.CustomVIew.EditTextLight
+                    android:id="@+id/etBarcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="@dimen/space_16"
+                    android:background="@drawable/bg_white_round"
+                    android:enabled="false"
+                    android:hint="Enter App Number"
+                    android:inputType="text"
+                    android:maxLength="100"
+                    android:paddingLeft="@dimen/space_16"
+                    android:paddingRight="@dimen/space_16"
+                    android:singleLine="true"
+                    android:textSize="@dimen/normal_text_size1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/rlButtons"
+        android:layout_centerVertical="true"
+        android:background="@color/color_gray"></View>
+
+    <LinearLayout
+        android:id="@+id/rlButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible">
-
-        <TextView android:id="@+id/tvQr_BarcodeValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/response"
-            android:textColor="@color/color_dark_gray"
-            android:textSize="@dimen/normal_text_size"
-            android:textStyle="bold" />
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/space_16">
 
         <Button
             android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/btn_width"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_16"
+            android:enabled="false"
             android:text="@string/submit" />
 
-        <TextView
-            android:id="@+id/tvResponseLbl"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="@dimen/btn_width"
             android:layout_height="wrap_content"
-            android:text="@string/response"
-            android:textColor="@color/color_dark_gray"
-            android:textSize="@dimen/normal_text_size"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvResponseValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/response"
-            android:textColor="@color/color_dark_gray"
-            android:textSize="@dimen/normal_text_size" />
+            android:layout_marginLeft="@dimen/space_16"
+            android:enabled="false"
+            android:text="@string/reset" />
 
     </LinearLayout>
-
-
-</LinearLayout>
+</RelativeLayout>

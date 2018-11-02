@@ -68,4 +68,5 @@
         <item name="android:dividerHeight">0dp</item>
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
+
 </resources>

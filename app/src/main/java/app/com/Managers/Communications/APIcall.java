@@ -18,6 +18,10 @@ public class APIcall {
 
     public static int OPERATION_ID_LOGIN = 100;
     public static int OPERATION_ID_SUBMIT_DATA = 101;
+    public static int OPERATION_ID_GET_SCAN_DATA = 102;
+    public static int OPERATION_ID_GET_DEPT_LIST = 103;
+    public static int OPERATION_ID_UPDATE_RECORD = 104;
+    public static int OPERATION_ID_GET_REPORT = 105;
     private Context moContext;
     private ApiCallListner apiCallListner;
     private int operationCode;

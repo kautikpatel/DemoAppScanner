@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Demo App</string>
+    <string name="app_name">FTS</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -8,7 +8,8 @@
 
     <!-- Screen Title-->
     <string name="title_login">Login</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Welcome to FTS</string>
+    <string name="title_details">Details</string>
 
 
     <string name="prompt_email">Email</string>
@@ -26,5 +27,18 @@
     <string name="response">Response : </string>
     <string name="submit">Submit</string>
     <string name="error_camera_permission">Please allow Camera permission</string>
+    <string name="reset">Reset</string>
+    <string name="tag_code_lbl">Tag Code :</string>
+    <string name="bar_code_lbl">Barcode :</string>
+    <string name="file_name_lbl">File Name :</string>
+    <string name="dept_lbl">Dept :</string>
+    <string name="room_no_lbl">Room / Table No :</string>
+    <string name="file_status_lbl">File Status :</string>
+    <string name="due_date_lbl">Due Date :</string>
+    <string name="remarks_lbl">Remarks :</string>
+    <string name="update">Update</string>
+    <string name="action_lbl">Action Required :</string>
+    <string name="title_report">Report</string>
+    <string name="title_update_details">Update Details</string>
 
 </resources>

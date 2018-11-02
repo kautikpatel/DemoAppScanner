@@ -4,21 +4,38 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+
+    signingConfigs {
+        Release {
+            storeFile file('../app/src/main/doc/FTS_Keystore')
+            storePassword 'fts321'
+            keyAlias 'key0'
+            keyPassword 'fts321'
+        }
+    }
+
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion rootProject.buildToolsVersion
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.app.basicapp"
+        applicationId "com.app.fts"
         targetSdkVersion rootProject.targetSdkVersion
         minSdkVersion rootProject.minSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Release
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.Release
         }
     }
 }
@@ -37,4 +54,7 @@ dependencies {
         exclude module: 'support-v4'
         exclude module: 'support-v7'
     }
+
+    //implementation 'com.jjoe64:graphview:4.2.2'
+    implementation 'com.github.PhilJay:MPAndroidChart:v2.2.4'
 }

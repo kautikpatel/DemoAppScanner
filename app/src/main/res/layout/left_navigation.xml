@@ -3,33 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/side_nav_bar"
-    android:gravity="bottom"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="30dp"
+    android:paddingLeft="@dimen/space_16"
+    android:paddingRight="@dimen/space_16"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@drawable/ic_launcher" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Android Studio"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    <app.com.Ui.CustomVIew.TextViewLight
+        android:id="@+id/tvUserName"
+        style="@style/smallTextStyle"
+        android:layout_marginTop="@dimen/space_8"
+        android:text="Android Studio" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <app.com.Ui.CustomVIew.TextViewLight
+        android:id="@+id/tvEmail"
+        style="@style/smallTextStyle"
         android:text="android.studio@android.com" />
 
 </LinearLayout>

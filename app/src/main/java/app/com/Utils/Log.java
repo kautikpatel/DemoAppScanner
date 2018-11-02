@@ -47,7 +47,7 @@ public class Log {
             localBufferedWriter.append(Common.getCurrentDateTimeString(true) + "\t" + APP_NAME + "/" + paramString1 + "\t" + paramString2 + "\n");
             localBufferedWriter.close();
             return;
-        } catch (IOException localIOException) {
+        } catch (Exception localIOException) {
             localIOException.printStackTrace();
         }
     }

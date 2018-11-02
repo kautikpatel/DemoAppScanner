@@ -1,0 +1,257 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Login progress -->
+        <ProgressBar
+            android:id="@+id/login_progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <ScrollView
+            android:id="@+id/login_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/tag_code_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvTagCodeValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/bar_code_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvBarcodeValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/file_name_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvFileNameValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/dept_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvDeptValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/room_no_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvRoomNoValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/file_status_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvFileStatusValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/due_date_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvDueDateValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/remarks_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvRemarkValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llActionRequire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <app.com.Ui.CustomVIew.TextViewBold
+                        style="@style/normalTextStyle"
+                        android:text="@string/action_lbl"
+                        android:textColor="@color/color_dark_gray"
+                        android:textStyle="bold" />
+
+                    <app.com.Ui.CustomVIew.TextViewLight
+                        android:id="@+id/tvActionValue"
+                        style="@style/normalTextStyle"
+                        android:layout_marginLeft="@dimen/space_8"
+                        android:text="dssdsdsd"
+                        android:textColor="@color/color_dark_gray" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="@dimen/btn_width"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/space_20"
+                    android:text="@string/update" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

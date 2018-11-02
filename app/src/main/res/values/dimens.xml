@@ -32,4 +32,7 @@
     <dimen name="space_16">16dp</dimen>
     <dimen name="space_18">18dp</dimen>
     <dimen name="space_20">20dp</dimen>
+
+    <dimen name="btn_width">100dp</dimen>
+    <dimen name="edit_field_height">45dp</dimen>
 </resources>
