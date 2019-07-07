@@ -1,11 +1,14 @@
 package app.com.Ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
 import org.json.JSONObject;
 
@@ -29,6 +32,47 @@ public class SplashActivity extends AppCompatActivity implements APIcall.ApiCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         sharedPref = new SharedPreferenceManagerFile(SplashActivity.this);
+        String ipAddress = sharedPref.getFromSharedPreference(SharedPreferenceManagerFile.PREFERENCE_IP_ADDRESS);
+        if (Common.isEmpty(ipAddress)) {
+            showIpAddressDialog();
+        } else {
+            goAhead();
+        }
+        addShortcut();
+    }
+
+    private CustomIpAddressDialog customDialog;
+
+    private void showIpAddressDialog() {
+        customDialog = new CustomIpAddressDialog(SplashActivity.this);
+        customDialog.show();
+        Window window = customDialog.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        customDialog.setCancelable(false);
+        customDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        customDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                String ipAddress = customDialog.getIpAddress();
+                if (Common.isEmpty(ipAddress)) {
+                    return;
+                }
+                if (!Common.isIpValid(ipAddress)) {
+                    return;
+                }
+                sharedPref.setInSharedPreference(SharedPreferenceManagerFile.PREFERENCE_IP_ADDRESS, ipAddress);
+                goAhead();
+                // Call forgot pswd API
+                /*String url = AppConstant.API_FORGOT_PSWD.replace("EMAIL_ADDRESS", emailid);
+                APIcall apIcall = new APIcall(LoginActivity.this);
+                apIcall.isPost(false);
+                apIcall.execute(url, APIcall.OPERATION_ID_FORGOT_PSWD, LoginActivity.this);*/
+            }
+        });
+    }
+
+    private void goAhead() {
         String emailId = sharedPref.getFromSharedPreference(SharedPreferenceManagerFile.PREFERENCE_EMAIL_ID);
         if (!TextUtils.isEmpty(emailId)) {
             findViewById(R.id.pb).setVisibility(View.VISIBLE);
@@ -49,7 +93,6 @@ public class SplashActivity extends AppCompatActivity implements APIcall.ApiCall
                 }
             });
         }
-        addShortcut();
     }
 
     @Override

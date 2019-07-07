@@ -35,4 +35,7 @@
 
     <dimen name="btn_width">100dp</dimen>
     <dimen name="edit_field_height">45dp</dimen>
+    <dimen name="team_name_dialog_width">300dp</dimen>
+    <dimen name="btn_height_small">40dp</dimen>
+
 </resources>

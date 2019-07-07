@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import app.com.Managers.SharedPreferenceManagerFile;
 import app.com.Utils.AppConstant;
 import app.com.Utils.Log;
 import okhttp3.OkHttpClient;
@@ -27,6 +28,7 @@ public class APIcall {
     private int operationCode;
     private String url;
     private CallApiExecute callApiExecute;
+
     public APIcall(Context context) {
         moContext = context;
     }
@@ -62,9 +64,14 @@ public class APIcall {
 
         @Override
         protected String doInBackground(String... params) {
-            if (!url.contains("http")) {
+            /*if (!url.contains("http")) {
                 url = AppConstant.BASE_URL + url;
-            }
+            }*/
+            SharedPreferenceManagerFile sharedPref = new SharedPreferenceManagerFile(moContext);
+            String ipAddress = sharedPref.getFromSharedPreference(SharedPreferenceManagerFile.PREFERENCE_IP_ADDRESS);
+            String portNo = sharedPref.getFromSharedPreference(SharedPreferenceManagerFile.PREFERENCE_PORT_NO);
+            String prefixUrl = "http://" + ipAddress + ":" + portNo + AppConstant.BASE_URL;
+            url = prefixUrl + url;
             String userAgent = System.getProperty("http.agent");
             Log.i("userAgent", "userAgent:::" + userAgent);
             Log.i("CallApiExecute", "API Url:" + url);

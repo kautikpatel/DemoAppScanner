@@ -393,5 +393,11 @@ public class Common {
     public static boolean isEmailValid(String email) {
         return (email.matches(AppConstant.EMAIL_PATTERN));
     }
+    public static boolean isEmpty(String value) {
+        return TextUtils.isEmpty(value) || value.equals("null");
+    }
+    public static boolean isIpValid(String ipAddress) {
+        return (AppConstant.PARTIAl_IP_ADDRESS.matcher(ipAddress).matches());
+    }
 
 }

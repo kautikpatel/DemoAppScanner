@@ -15,7 +15,7 @@ android {
     }
 
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
+    //buildToolsVersion rootProject.buildToolsVersion
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.app.fts"

@@ -5,7 +5,7 @@ group = 'com.github.bobekos'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion rootProject.buildToolsVersion
+    //buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         targetSdkVersion rootProject.targetSdkVersion

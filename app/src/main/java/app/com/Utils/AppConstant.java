@@ -1,10 +1,12 @@
 package app.com.Utils;
 
+import java.util.regex.Pattern;
+
 public class AppConstant {
 
     public static final String CONNECTION_ERROR_MSG = "No connection found. Please connect & try again.";
-
-    public static final String BASE_URL = "https://www.radiofile.host/ws/";
+    //public static final String BASE_URL1 = "https://www.radiofile.host";
+    public static final String BASE_URL = /*BASE_URL1+ */"/ws/";
     public static final String API_DO_LOGIN = "login.php?";
     public static final String API_SEARCH_FILE = "search_file.php?";
     public static final String API_GET_DEPT_LIST = "get_deptlist.php?";
@@ -34,6 +36,11 @@ public class AppConstant {
 
     public static final String[] statusDisplayList = new String[]{"Select Status", "CheckIn", "In Process", "Checkout"};
     public static final String[] statusList = new String[]{"", "checkin", "inprocess", "checkout"};
+
+    public static final Pattern PARTIAl_IP_ADDRESS =
+            Pattern.compile("^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])\\.){0,3}"+
+                    "((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[0-9])){0,1}$");
+
 
 
 }

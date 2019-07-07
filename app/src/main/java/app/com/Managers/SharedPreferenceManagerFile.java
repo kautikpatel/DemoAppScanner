@@ -8,6 +8,8 @@ public class SharedPreferenceManagerFile {
     private Context moContext;
     private SharedPreferences moSharedPreferences;
     public static String FILE_NAME = "AppConfig";
+    public static final String PREFERENCE_IP_ADDRESS = "ip_address";
+    public static final String PREFERENCE_PORT_NO = "port_no";
     public static final String PREFERENCE_EMAIL_ID = "email_address";
     public static final String PREFERENCE_PASSWORD = "password";
     public static final String PREFERENCE_USER_ID = "user_id";
